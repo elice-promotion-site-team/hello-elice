@@ -6,6 +6,9 @@
   "scripts": {
     "start": "ts-node src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "ts-node src/server.js",
+    "dev:client": "cd client && npm run start",
     "heroku-postbuild": "npm install && cd frontend && npm install && npm run build"
   },
   "engines": {
