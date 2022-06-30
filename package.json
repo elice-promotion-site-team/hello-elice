@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "npm install && cd frontend && npm install"
+    "heroku-postbuild": "npm install && cd frontend && npm install && npm run build"
   },
   "engines": {
     "node": "16.14.0"
