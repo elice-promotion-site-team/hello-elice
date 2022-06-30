@@ -19,9 +19,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/elice-promotion-site-team/elice-promotion-site-backend/issues"
+    "url": "https://github.com/89yunik/hello-elice/issues"
   },
-  "homepage": "https://github.com/elice-promotion-site-team/elice-promotion-site-backend#readme",
+  "homepage": "https://github.com/89yunik/hello-elice#readme",
   "dependencies": {
     "@types/cookie-parser": "^1.4.3",
     "@types/cors": "^2.8.12",
