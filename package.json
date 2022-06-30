@@ -8,6 +8,7 @@
     "start": "node src/server.js",
     "start-local": "nodemon --exec ts-node src/server.ts",
     "build": "tsc",
+    "postinstall": "npm run build",
     "heroku-postbuild": "npm install && cd frontend && npm install && npm run build"
   },
   "engines": {
