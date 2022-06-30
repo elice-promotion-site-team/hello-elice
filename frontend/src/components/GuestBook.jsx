@@ -15,7 +15,7 @@ const GuestBook = () => {
 
   //전체 방명록 목록 불러와서 comments state 설정
   const refleshHandler = async () => {
-    const res = await fetch('http://localhost:3001/api/guestbook/list');
+    const res = await fetch('/api/guestbook/list');
     const data = await res.json();
     setComments(data);
   };
@@ -33,7 +33,7 @@ const GuestBook = () => {
     //   comment = i + '번째 방명록 테스트입니다.';
     //   console.log(name + ' ' + comment);
 
-    const res = await fetch('http://localhost:3001/api/guestbook', {
+    const res = await fetch('/api/guestbook', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ const GuestBook = () => {
 
   //구글 로그인
   const login = async () => {
-    if (!cookies.token) window.open('http://localhost:3001/auth/google', '_blank');
+    if (!cookies.token) window.open('/auth/google', '_blank');
   };
 
   return (

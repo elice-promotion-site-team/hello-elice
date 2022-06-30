@@ -1,5 +1,3 @@
-// import { useEffect } from 'react';
-// import axios from 'axios';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
@@ -22,16 +20,6 @@ import GuestBook from './components/GuestBook';
 import Quiz from './components/Quiz';
 
 function App() {
-  //backend src/server.js와 연결된 data를 가져옴
-  // const sendRequest = async () => {
-  //   const response = await axios.get(`http://localhost:3001`); //domain 수정 필요
-  //   console.log(response);
-  //   console.log(response.data);
-  // };
-
-  // useEffect(() => {
-  //   sendRequest();
-  // });
   return (
     <Router>
       <Routes>
