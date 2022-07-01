@@ -7,7 +7,6 @@ import { apiRouter, authRouter } from './routes';
 import { errorHandler, getUserFromJWT } from './middlewares';
 import { usePassport } from './passport';
 import webSocket from './socket';
-import path from 'path';
 
 usePassport();
 const app = express();
@@ -36,9 +35,3 @@ const server = app.listen(PORT, () => console.log(`server is running ${PORT}`));
 
 // // socket
 webSocket(server);
-
-app.use(express.static(path.join(__dirname, '/../frontend/build'))); // 리액트 정적 파일 제공
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/../frontend/build/index.html'));
-}); // 라우트 설정

@@ -93,12 +93,14 @@ function webSocket(server: http.Server) {
       let now = `${hours}:${minutes}`;
 
       // 채팅 종료한 접속자를 다른사람들에게 알림
-      socket.broadcast.emit('update', {
-        msg: `${socket.name}님이 나가셨습니다.`,
-        clientsCount,
-        clientsList,
-        time: now,
-      });
+      if (socket.name) {
+        socket.broadcast.emit('update', {
+          msg: `${socket.name}님이 나가셨습니다.`,
+          clientsCount,
+          clientsList,
+          time: now,
+        });
+      }
     });
   });
 }

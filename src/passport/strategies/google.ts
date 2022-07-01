@@ -1,8 +1,8 @@
 import 'dotenv/config';
-const { Strategy, StrategyOptions, Profile, VerifyCallback } = require('passport-google-oauth20');
+import { Strategy, StrategyOptions, Profile, VerifyCallback } from 'passport-google-oauth20';
 import { User } from '../../models';
 
-const config: typeof StrategyOptions = {
+const config: StrategyOptions = {
   clientID: process.env.CLIENT_ID as string, // clientId 설정하기
   clientSecret: process.env.CLIENT_SECRET as string, // clientSecret 설정하기
   callbackURL: '/auth/google/callback',
@@ -28,7 +28,7 @@ async function findOrCreateUser(name: string, email: string) {
 
 export const google = new Strategy(
   config,
-  async (accessToken: string, refreshToken: string, profile: typeof Profile, done: typeof VerifyCallback) => {
+  async (accessToken: string, refreshToken: string, profile: Profile, done: VerifyCallback) => {
     const { email, name } = profile._json;
     try {
       const user = await findOrCreateUser(name!, email!);

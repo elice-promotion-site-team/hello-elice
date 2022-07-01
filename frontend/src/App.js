@@ -18,6 +18,7 @@ import TrackInfo from './components/TrackInfo';
 import TrackApply from './components/TrackApply';
 import GuestBook from './components/GuestBook';
 import Quiz from './components/Quiz';
+import Chat from './components/Chat';
 
 function App() {
   //backend src/server.js와 연결된 data를 가져옴
@@ -53,10 +54,10 @@ function App() {
                 </a>
               </section>
               <section className="main main3">
-                <span className="cateTitle">이벤트</span>
+                <span className="cateTitle">퀴즈풀이</span>
                 <a href="/Quiz" className="cateLink">
-                  <img src={mainCategory3} className="mainct" alt="이벤트" />
-                  <img src={mainCategory03} className="mainct hoverImg" alt="이벤트" />
+                  <img src={mainCategory3} className="mainct" alt="Quiz" />
+                  <img src={mainCategory03} className="mainct hoverImg" alt="Quiz" />
                 </a>
               </section>
               <section className="main main4">
@@ -94,6 +95,7 @@ function App() {
         <Route path="/trackapply" element={<TrackApply />} />
         <Route path="/guestbook" element={<GuestBook />} />
         <Route path="/Quiz" element={<Quiz />} />
+        <Route path="/chat" element={<Chat />} />
       </Routes>
     </Router>
   );
