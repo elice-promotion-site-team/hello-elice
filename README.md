@@ -17,7 +17,7 @@
 
 1. 소셜 로그인 기능
 - passport-google-oauth2.0 이용 : 사용자의 편의성, 보안 등을 고려
-- user 정보를 jwt token 형태로 cookie에 저장 : 모바일 환경에서도 사용 가능한 token, 클라이언트에 저장 가능한 cookie 사용
+- user 정보를 jwt token 형태로 cookie에 저장 : 모바일에서 사용 가능한 token, 클라이언트에 저장 가능한 cookie 사용
 2. 퀴즈 기능
 - mongoDB 이용 CRUD 구현 : 보안상의 이유로 Read, Update만 사용
 - user 정보와 연동 (문제풀이 여부, 맞은 문제 개수) : mypage에서 해당 정보를 확인할 수 있도록 user 정보와 연동
