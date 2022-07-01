@@ -8,6 +8,8 @@
 
 ### https://elice-promotion-site.herokuapp.com/
 
+https://github.com/elice-promotion-site-team/elice-promotion-site-front
+https://github.com/elice-promotion-site-team/elice-promotion-site-backend
 <br>
 
 \*\* 핵심 기능은 하기입니다. <br>
