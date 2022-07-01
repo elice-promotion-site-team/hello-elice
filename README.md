@@ -8,9 +8,9 @@
 
 ### https://elice-promotion-site.herokuapp.com/
 
-이 레포지토리는 배포용입니다. 작업 내용은 하단 레포지토리를 참조 바랍니다.
-https://github.com/elice-promotion-site-team/elice-promotion-site-front <br>
-https://github.com/elice-promotion-site-team/elice-promotion-site-backend
+<div>이 레포지토리는 배포용입니다. 작업 내용은 하단 레포지토리를 참조 바랍니다.</div>
+<div> https://github.com/elice-promotion-site-team/elice-promotion-site-front </div>
+<div> https://github.com/elice-promotion-site-team/elice-promotion-site-backend </div>
 <br>
 
 \*\* 핵심 기능은 하기입니다. <br>
