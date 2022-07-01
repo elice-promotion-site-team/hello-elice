@@ -1,4 +1,5 @@
-import jwt, { JwtPayload } from 'jsonwebtoken';
+const jwt = require('jsonwebtoken');
+const { JwtPayload } = require('jsonwebtoken');
 import 'dotenv/config';
 
 export const secret = process.env.JWT_SECRET || '';
@@ -8,7 +9,7 @@ export function setUserToken(user: Express.User): string {
   return token;
 }
 
-export function getUserDataFromToken(token: string): JwtPayload | Error {
+export function getUserDataFromToken(token: string): typeof JwtPayload | Error {
   const user = jwt.verify(token, secret);
   if (typeof user !== 'string') {
     return user;

@@ -7,14 +7,18 @@ interface clientsListInfo {
 }
 
 function webSocket(server: http.Server) {
-  const io = new Server(server);
+  const io = new Server(server, {
+    cors: {
+      origin: 'http://localhost:3000',
+      methods: ['GET', 'POST'],
+    },
+  });
 
   // 현재 접속자 목록
   const clientsList: clientsListInfo = {};
 
   // socket 연결중
   io.sockets.on('connection', (socket: any) => {
-    console.log('socket 접속');
     // 새로운 접속자 발생
     socket.on('newUser', (newUser: string) => {
       // 접속자의 name 속성에 이름 저장
@@ -32,7 +36,6 @@ function webSocket(server: http.Server) {
       let minutes = today.getMinutes(); // 분
       let now = `${hours}:${minutes}`;
 
-      console.log(clientsCount, clientsList, now);
       // 새로운 접속자 나에게 알림
       socket.emit('update', {
         msg: `${newUser}(나)님이 접속했습니다.`,
@@ -54,7 +57,6 @@ function webSocket(server: http.Server) {
     socket.on('chat message', (data: any) => {
       // 메세지 전송자 이름 추출
       const name = socket.name;
-      console.log(data);
 
       // 현재 시간
       let today = new Date(); // 현재 시간
@@ -80,11 +82,9 @@ function webSocket(server: http.Server) {
     socket.on('disconnect', () => {
       // 현재 접속자 수
       const clientsCount = io.sockets.server.engine.clientsCount;
-      console.log(clientsCount);
 
       // 채팅 종료한 사람은 접속자 목록에서 삭제
       delete clientsList[socket.name];
-      console.log('clientsList', clientsList);
 
       // 현재 시간
       let today = new Date(); // 현재 시간

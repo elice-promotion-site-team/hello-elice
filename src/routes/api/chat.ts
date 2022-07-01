@@ -6,8 +6,9 @@ const chatRouter = Router();
 chatRouter.get('/', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const chats = await chatService.getChats();
-    console.log(chats.map((chat) => ({ name: chat.nickname, msg: chat.message, time: chat.time })));
-    res.sendFile(path.resolve(__dirname + '../../../static/index.html'));
+    const chatInfo = chats.map((chat) => ({ name: chat.nickname, msg: chat.message, time: chat.time }));
+    res.status(200).json(chatInfo);
+    // res.sendFile(path.resolve(__dirname + '../../../static/index.html'));
   } catch (error) {
     next(error);
   }

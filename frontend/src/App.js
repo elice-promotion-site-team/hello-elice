@@ -1,9 +1,9 @@
+// import { useEffect } from 'react';
+// import axios from 'axios';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Nav from './components/Nav';
-import Hamburger from './components/Hamburger';
-import Burger from './components/Burger';
+import Header from './components/Header';
 
 import mainBackground from '../src/assets/main_background.png';
 import mainCategory1 from '../src/assets/main01-1.png';
@@ -20,6 +20,16 @@ import GuestBook from './components/GuestBook';
 import Quiz from './components/Quiz';
 
 function App() {
+  //backend src/server.js와 연결된 data를 가져옴
+  // const sendRequest = async () => {
+  //   const response = await axios.get(`http://localhost:3001`); //domain 수정 필요
+  //   console.log(response);
+  //   console.log(response.data);
+  // };
+
+  // useEffect(() => {
+  //   sendRequest();
+  // });
   return (
     <Router>
       <Routes>
@@ -27,9 +37,7 @@ function App() {
           path="/"
           element={
             <div className="mainContainer">
-              {/* <Nav title="Elice Promotion Site" /> */}
-              {/* <Hamburger /> */}
-              <Burger />
+              <Header></Header>
               <section className="main main1">
                 <span className="cateTitle">트랙소개</span>
                 <a href="/trackinfo" className="cateLink">
