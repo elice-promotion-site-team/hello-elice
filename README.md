@@ -8,7 +8,7 @@
 
 ### https://elice-promotion-site.herokuapp.com/
 
-https://github.com/elice-promotion-site-team/elice-promotion-site-front
+https://github.com/elice-promotion-site-team/elice-promotion-site-front <br>
 https://github.com/elice-promotion-site-team/elice-promotion-site-backend
 <br>
 
