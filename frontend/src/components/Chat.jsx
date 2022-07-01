@@ -3,7 +3,10 @@ import { useCookies } from 'react-cookie';
 import io from 'socket.io-client';
 import '../css/Chat.css';
 
-const socket = io.connect('http://localhost:3001', { autoConnect: true, transports: ['websocket'] });
+const socket = io.connect('https://elice-promotion-site.herokuapp.com/', {
+  autoConnect: true,
+  transports: ['websocket'],
+});
 
 const Chat = () => {
   const [cookies] = useCookies(['token']);
