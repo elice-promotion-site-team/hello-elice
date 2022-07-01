@@ -1,5 +1,5 @@
 import { Request } from 'express';
-import { Strategy } from 'passport-jwt';
+const { Strategy } = require('passport-jwt');
 import { secret } from '../../utils/jwt';
 
 const cookieExtractor = (req: Request) => {
@@ -12,6 +12,6 @@ const opts = {
   jwtFromRequest: cookieExtractor,
 };
 
-export const jwt = new Strategy(opts, (user, done) => {
+export const jwt = new Strategy(opts, (user: any, done: any) => {
   done(null, user);
 });

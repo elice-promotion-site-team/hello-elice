@@ -55,4 +55,15 @@ quizRouter.put('/', async (req: Request, res: Response, next: NextFunction) => {
   }
 });
 
+quizRouter.delete('/:quizNumber', async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const quizNumber = Number(req.params.quizNumber);
+    const deleteResult = await quizService.deleteQuiz(quizNumber);
+
+    res.status(200).json(deleteResult);
+  } catch (error) {
+    next(error);
+  }
+});
+
 export { quizRouter };

@@ -82,6 +82,19 @@ class QuizService {
       return updatedQuiz;
     }
   }
+
+  async deleteQuiz(quizNumber: number): Promise<{ result: string }> {
+    const { deletedCount } = await Quiz.deleteOne({ quizNumber });
+
+    // 삭제에 실패한 경우, 에러 메시지 반환
+    if (deletedCount === 0) {
+      const error = new Error(`${quizNumber} 방명록의 삭제에 실패하였습니다`);
+      error.name = 'NotFound';
+      throw error;
+    }
+
+    return { result: 'success' };
+  }
 }
 
 const quizService = new QuizService();
